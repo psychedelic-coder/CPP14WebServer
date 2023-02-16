@@ -1,0 +1,142 @@
+[
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/http/include -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o http/CMakeFiles/httpServer.dir/src/HttpContext.cc.o -c /home/liuchen/项目/Muduo_WebServer/http/src/HttpContext.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/http/src/HttpContext.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/http/include -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o http/CMakeFiles/httpServer.dir/src/HttpResponse.cc.o -c /home/liuchen/项目/Muduo_WebServer/http/src/HttpResponse.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/http/src/HttpResponse.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/http/include -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o http/CMakeFiles/httpServer.dir/src/HttpServer.cc.o -c /home/liuchen/项目/Muduo_WebServer/http/src/HttpServer.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/http/src/HttpServer.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Acceptor.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Acceptor.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Acceptor.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/AsyncLogging.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/AsyncLogging.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/AsyncLogging.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Buffer.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Buffer.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Buffer.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Channel.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Channel.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Channel.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/CurrentThread.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/CurrentThread.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/CurrentThread.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/DefaultPoller.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/DefaultPoller.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/DefaultPoller.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/EpollPoller.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EpollPoller.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/EpollPoller.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoop.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoop.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoop.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThread.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThread.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThread.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThreadPool.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThreadPool.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThreadPool.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/FileUtil.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/FileUtil.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/FileUtil.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/InetAddress.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/InetAddress.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/InetAddress.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/LogFile.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogFile.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogFile.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/LogStream.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogStream.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogStream.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Logger.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Logger.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Logger.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Poller.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Poller.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Poller.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Socket.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Socket.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Socket.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/TcpConnection.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpConnection.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpConnection.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/TcpServer.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpServer.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpServer.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Thread.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Thread.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Thread.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Timer.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timer.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timer.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/TimerQueue.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TimerQueue.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/TimerQueue.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/CMakeFiles/mymuduo.dir/src/Timestamp.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timestamp.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timestamp.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/test/CMakeFiles/test01.dir/test01.cc.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/test/test01.cc",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/test/test01.cc"
+},
+{
+  "directory": "/home/liuchen/项目/Muduo_WebServer/build",
+  "command": "/usr/bin/clang++ -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include -g -std=c++14 -o mymuduo/test/CMakeFiles/test02.dir/muduo_server.cpp.o -c /home/liuchen/项目/Muduo_WebServer/mymuduo/test/muduo_server.cpp",
+  "file": "/home/liuchen/项目/Muduo_WebServer/mymuduo/test/muduo_server.cpp"
+}
+]

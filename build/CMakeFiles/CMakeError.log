@@ -1,0 +1,51 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-1XcMzs
+
+Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_3211f && [1/2] Building CXX object CMakeFiles/cmTC_3211f.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_3211f
+FAILED: cmTC_3211f 
+: && /usr/bin/clang++   CMakeFiles/cmTC_3211f.dir/src.cxx.o -o cmTC_3211f   && :
+/usr/bin/ld: CMakeFiles/cmTC_3211f.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x25): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x31): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x3d): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.cxx:(.text+0x4f): undefined reference to `pthread_join'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-elZotr
+
+Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_da91a && [1/2] Building CXX object CMakeFiles/cmTC_da91a.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_da91a
+FAILED: cmTC_da91a 
+: && /usr/bin/clang++ -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_da91a.dir/CheckFunctionExists.cxx.o -o cmTC_da91a  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
