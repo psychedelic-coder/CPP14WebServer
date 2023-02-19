@@ -24,10 +24,10 @@
 ## 开发环境
 
 - 操作系统：Ubuntu 20.04.5 LTS
-- 编译器：clang version 10.0.0
+- 编译器：clang 10.0.0
 - 编辑器：vscode
 - 版本控制：git
-- 项目构建：cmake version 3.25.0
+- 项目构建：cmake 3.25.0
 
 ## 感谢
 - 《Linux高性能服务器编程》
