@@ -1,0 +1,162 @@
+Date : 2023-02-19 12:02:08
+Directory : /home/liuchen/项目/Muduo_WebServer
+Total : 99 files,  8321 codes, 549 comments, 1037 blanks, all 9907 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| C++                |         59 |      4,055 |        549 |        799 |      5,403 |
+| JSON               |         17 |      2,742 |          0 |         13 |      2,755 |
+| Markdown           |         10 |        601 |          0 |         64 |        665 |
+| CMake              |          9 |        348 |          0 |         70 |        418 |
+| CMake Cache        |          1 |        279 |          0 |         60 |        339 |
+| log                |          2 |        222 |          0 |         31 |        253 |
+| JSON with Comments |          1 |         74 |          0 |          0 |         74 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                              | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                 |         99 |      8,321 |        549 |      1,037 |      9,907 |
+| . (Files)                                                                                                         |          2 |         86 |          0 |         11 |         97 |
+| build                                                                                                             |         28 |      4,239 |         63 |        319 |      4,621 |
+| build (Files)                                                                                                     |          3 |        472 |          0 |         71 |        543 |
+| build/.cmake                                                                                                      |         14 |      2,598 |          0 |         13 |      2,611 |
+| build/.cmake/api                                                                                                  |         14 |      2,598 |          0 |         13 |      2,611 |
+| build/.cmake/api/v1                                                                                               |         14 |      2,598 |          0 |         13 |      2,611 |
+| build/.cmake/api/v1/query                                                                                         |          1 |          1 |          0 |          0 |          1 |
+| build/.cmake/api/v1/query/client-vscode                                                                           |          1 |          1 |          0 |          0 |          1 |
+| build/.cmake/api/v1/reply                                                                                         |         13 |      2,597 |          0 |         13 |      2,610 |
+| build/CMakeFiles                                                                                                  |          6 |      1,037 |         63 |        207 |      1,307 |
+| build/CMakeFiles (Files)                                                                                          |          3 |        313 |          0 |         36 |        349 |
+| build/CMakeFiles/3.25.0-rc3                                                                                       |          3 |        724 |         63 |        171 |        958 |
+| build/CMakeFiles/3.25.0-rc3 (Files)                                                                               |          2 |         74 |          0 |         26 |        100 |
+| build/CMakeFiles/3.25.0-rc3/CompilerIdCXX                                                                         |          1 |        650 |         63 |        145 |        858 |
+| build/http                                                                                                        |          1 |         37 |          0 |          8 |         45 |
+| build/mymuduo                                                                                                     |          4 |         95 |          0 |         20 |        115 |
+| build/mymuduo (Files)                                                                                             |          2 |         48 |          0 |         11 |         59 |
+| build/mymuduo/test                                                                                                |          2 |         47 |          0 |          9 |         56 |
+| http                                                                                                              |          7 |        480 |         15 |         83 |        578 |
+| http/include                                                                                                      |          4 |        310 |          6 |         59 |        375 |
+| http/include/http                                                                                                 |          4 |        310 |          6 |         59 |        375 |
+| http/src                                                                                                          |          3 |        170 |          9 |         24 |        203 |
+| mymuduo                                                                                                           |         62 |      3,516 |        471 |        624 |      4,611 |
+| mymuduo (Files)                                                                                                   |          1 |          2 |          0 |          1 |          3 |
+| mymuduo/.VSCodeCounter                                                                                            |         10 |        589 |          0 |         52 |        641 |
+| mymuduo/.VSCodeCounter/2023-01-18_00-30-25                                                                        |          5 |        215 |          0 |         26 |        241 |
+| mymuduo/.VSCodeCounter/2023-01-26_23-25-35                                                                        |          5 |        374 |          0 |         26 |        400 |
+| mymuduo/include                                                                                                   |         25 |      1,088 |        193 |        288 |      1,569 |
+| mymuduo/include/mymuduo                                                                                           |         25 |      1,088 |        193 |        288 |      1,569 |
+| mymuduo/src                                                                                                       |         23 |      1,694 |        249 |        264 |      2,207 |
+| mymuduo/test                                                                                                      |          3 |        143 |         29 |         19 |        191 |
+| mymuduo/test (Files)                                                                                              |          2 |         84 |         15 |         13 |        112 |
+| mymuduo/test/testmuduo                                                                                            |          1 |         59 |         14 |          6 |         79 |
++-------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                          | language           | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /home/liuchen/项目/Muduo_WebServer/CPP14WebServer.md                                                                | Markdown           |         12 |          0 |         11 |         23 |
+| /home/liuchen/项目/Muduo_WebServer/Muduo_WebServer.code-workspace                                                   | JSON with Comments |         74 |          0 |          0 |         74 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/query/client-vscode/query.json                               | JSON               |          1 |          0 |          0 |          1 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/cache-v2-456242748d8ddf5e2411.json                     | JSON               |      1,127 |          0 |          1 |      1,128 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/cmakeFiles-v1-7cff423ea3034e5ea6be.json                | JSON               |        156 |          0 |          1 |        157 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/codemodel-v2-9f5a03f3a77abd4c10da.json                 | JSON               |        138 |          0 |          1 |        139 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json            | JSON               |         14 |          0 |          1 |         15 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/directory-http-Debug-33cc5cc33a560f8f299b.json         | JSON               |         14 |          0 |          1 |         15 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/directory-mymuduo-Debug-696fa1ded8dcc800dcaa.json      | JSON               |         14 |          0 |          1 |         15 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/directory-mymuduo.test-Debug-59ad8cad089b2edb6c35.json | JSON               |         14 |          0 |          1 |         15 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/index-2023-02-19T03-43-07-0316.json                    | JSON               |        132 |          0 |          1 |        133 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/target-httpServer-Debug-9b2184b7f731bebca792.json      | JSON               |        166 |          0 |          1 |        167 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/target-mymuduo-Debug-d94f5cda64d73d0f05fc.json         | JSON               |        440 |          0 |          1 |        441 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/target-test01-Debug-6a482af694dff58692bd.json          | JSON               |        156 |          0 |          1 |        157 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/target-test02-Debug-eb7692dcd9487268558a.json          | JSON               |        156 |          0 |          1 |        157 |
+| /home/liuchen/项目/Muduo_WebServer/build/.cmake/api/v1/reply/toolchains-v1-2bd808a9c78ff19f8250.json                | JSON               |         70 |          0 |          1 |         71 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeCache.txt                                                             | CMake Cache        |        279 |          0 |         60 |        339 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/3.25.0-rc3/CMakeCXXCompiler.cmake                               | CMake              |         64 |          0 |         20 |         84 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/3.25.0-rc3/CMakeSystem.cmake                                    | CMake              |         10 |          0 |          6 |         16 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/3.25.0-rc3/CompilerIdCXX/CMakeCXXCompilerId.cpp                 | C++                |        650 |         63 |        145 |        858 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeError.log                                                  | log                |         39 |          0 |         13 |         52 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeOutput.log                                                 | log                |        183 |          0 |         18 |        201 |
+| /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/VerifyGlobs.cmake                                               | CMake              |         91 |          0 |          5 |         96 |
+| /home/liuchen/项目/Muduo_WebServer/build/cmake_install.cmake                                                        | CMake              |         51 |          0 |         11 |         62 |
+| /home/liuchen/项目/Muduo_WebServer/build/compile_commands.json                                                      | JSON               |        142 |          0 |          0 |        142 |
+| /home/liuchen/项目/Muduo_WebServer/build/http/cmake_install.cmake                                                   | CMake              |         37 |          0 |          8 |         45 |
+| /home/liuchen/项目/Muduo_WebServer/build/mymuduo/CTestTestfile.cmake                                                | CMake              |          7 |          0 |          1 |          8 |
+| /home/liuchen/项目/Muduo_WebServer/build/mymuduo/cmake_install.cmake                                                | CMake              |         41 |          0 |         10 |         51 |
+| /home/liuchen/项目/Muduo_WebServer/build/mymuduo/test/CTestTestfile.cmake                                           | CMake              |         10 |          0 |          1 |         11 |
+| /home/liuchen/项目/Muduo_WebServer/build/mymuduo/test/cmake_install.cmake                                           | CMake              |         37 |          0 |          8 |         45 |
+| /home/liuchen/项目/Muduo_WebServer/http/include/http/HttpContext.h                                                  | C++                |         47 |          2 |         13 |         62 |
+| /home/liuchen/项目/Muduo_WebServer/http/include/http/HttpRequest.h                                                  | C++                |        168 |          1 |         21 |        190 |
+| /home/liuchen/项目/Muduo_WebServer/http/include/http/HttpResponse.h                                                 | C++                |         61 |          2 |         14 |         77 |
+| /home/liuchen/项目/Muduo_WebServer/http/include/http/HttpServer.h                                                   | C++                |         34 |          1 |         11 |         46 |
+| /home/liuchen/项目/Muduo_WebServer/http/src/HttpContext.cc                                                          | C++                |         48 |          0 |          3 |         51 |
+| /home/liuchen/项目/Muduo_WebServer/http/src/HttpResponse.cc                                                         | C++                |         36 |          0 |          7 |         43 |
+| /home/liuchen/项目/Muduo_WebServer/http/src/HttpServer.cc                                                           | C++                |         86 |          9 |         14 |        109 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-18_00-30-25/details.md                            | Markdown           |        164 |          0 |          6 |        170 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-18_00-30-25/diff-details.md                       | Markdown           |          9 |          0 |          6 |         15 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-18_00-30-25/diff.md                               | Markdown           |         12 |          0 |          7 |         19 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-18_00-30-25/results.json                          | JSON               |          1 |          0 |          0 |          1 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-18_00-30-25/results.md                            | Markdown           |         29 |          0 |          7 |         36 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-26_23-25-35/details.md                            | Markdown           |         63 |          0 |          6 |         69 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-26_23-25-35/diff-details.md                       | Markdown           |        218 |          0 |          6 |        224 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-26_23-25-35/diff.md                               | Markdown           |         56 |          0 |          7 |         63 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-26_23-25-35/results.json                          | JSON               |          1 |          0 |          0 |          1 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/.VSCodeCounter/2023-01-26_23-25-35/results.md                            | Markdown           |         36 |          0 |          7 |         43 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/Readme.md                                                                | Markdown           |          2 |          0 |          1 |          3 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Acceptor.h                                               | C++                |         30 |          3 |          8 |         41 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/AsyncLogging.h                                           | C++                |         48 |          0 |         10 |         58 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Buffer.h                                                 | C++                |        107 |          6 |         22 |        135 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Callbacks.h                                              | C++                |         16 |          2 |          6 |         24 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Channel.h                                                | C++                |         75 |         11 |         17 |        103 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/CurrentThread.h                                          | C++                |         19 |          2 |          8 |         29 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/EpollPoller.h                                            | C++                |         25 |         10 |          8 |         43 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/EventLoop.h                                              | C++                |         62 |         27 |         21 |        110 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/EventLoopThread.h                                        | C++                |         27 |          0 |          9 |         36 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/EventLoopThreadPool.h                                    | C++                |         32 |          1 |         12 |         45 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/FileUtil.h                                               | C++                |         18 |          1 |          6 |         25 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/InetAddress.h                                            | C++                |         21 |          1 |          6 |         28 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/LogFile.h                                                | C++                |         24 |          1 |          8 |         33 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/LogStream.h                                              | C++                |         89 |          1 |         23 |        113 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Logger.h                                                 | C++                |        125 |         79 |         23 |        227 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Poller.h                                                 | C++                |         27 |          6 |          7 |         40 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Socket.h                                                 | C++                |         23 |          1 |          7 |         31 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/TcpConnection.h                                          | C++                |         86 |          9 |         24 |        119 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/TcpServer.h                                              | C++                |         53 |          7 |         15 |         75 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Thread.h                                                 | C++                |         33 |          0 |         10 |         43 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Timer.h                                                  | C++                |         39 |          1 |         10 |         50 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/TimerId.h                                                | C++                |         16 |          0 |          4 |         20 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/TimerQueue.h                                             | C++                |         41 |         13 |         14 |         68 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/Timestamp.h                                              | C++                |         39 |          7 |          8 |         54 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/include/mymuduo/noncopyable.h                                            | C++                |         13 |          4 |          2 |         19 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Acceptor.cc                                                          | C++                |         66 |          2 |          7 |         75 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/AsyncLogging.cc                                                      | C++                |         82 |         20 |         15 |        117 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Buffer.cc                                                            | C++                |         42 |          2 |          8 |         52 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Channel.cc                                                           | C++                |         65 |          7 |         11 |         83 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/CurrentThread.cc                                                     | C++                |         15 |          0 |          5 |         20 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/DefaultPoller.cc                                                     | C++                |         17 |          0 |          4 |         21 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EpollPoller.cc                                                       | C++                |        129 |         21 |         17 |        167 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoop.cc                                                         | C++                |        170 |         34 |         14 |        218 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThread.cc                                                   | C++                |         49 |          2 |         11 |         62 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThreadPool.cc                                               | C++                |         54 |          6 |          9 |         69 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/FileUtil.cc                                                          | C++                |         40 |         30 |          5 |         75 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/InetAddress.cc                                                       | C++                |         32 |         12 |          7 |         51 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogFile.cc                                                           | C++                |         34 |          2 |          7 |         43 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogStream.cc                                                         | C++                |         98 |          2 |         19 |        119 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Logger.cc                                                            | C++                |        138 |         51 |         27 |        216 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Poller.cc                                                            | C++                |         12 |          0 |          4 |         16 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Socket.cc                                                            | C++                |         68 |          2 |         13 |         83 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpConnection.cc                                                     | C++                |        242 |         17 |         21 |        280 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpServer.cc                                                         | C++                |         80 |         11 |         12 |        103 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Thread.cc                                                            | C++                |         46 |         10 |          8 |         64 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timer.cc                                                             | C++                |         16 |          0 |          2 |         18 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TimerQueue.cc                                                        | C++                |        173 |         11 |         30 |        214 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timestamp.cc                                                         | C++                |         26 |          7 |          8 |         41 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/test/muduo_server.cpp                                                    | C++                |         60 |         14 |          7 |         81 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/test/test01.cc                                                           | C++                |         24 |          1 |          6 |         31 |
+| /home/liuchen/项目/Muduo_WebServer/mymuduo/test/testmuduo/muduo_server.cpp                                          | C++                |         59 |         14 |          6 |         79 |
+| Total                                                                                                             |                    |      8,321 |        549 |      1,037 |      9,907 |
++-------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

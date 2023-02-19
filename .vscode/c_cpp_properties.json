@@ -3,7 +3,6 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/include",
                 "/usr/include",
                 "/usr/include/c++/9",
                 "/usr/include/x86_64-linux-gnu/c++/9",
