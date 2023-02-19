@@ -8,7 +8,7 @@
 
 - #### 支持流式日志风格写日志和格式化风格写日志。流式日志使用LOG_INFO << "this is a log in stream type."; 格式化日志使用LOG_FMT("TcpConnection::ctor[%s] at fd=%d \n", name_.c_str(), sockfd)
 
-- #### 基于红黑树实现定时器管理结构，内部使用 Linux 的 timerfd 通知到期任务，高效管理定时任务。
+- #### 基于红黑树实现定时器管理结构，内部使用 Linux 的 timerfd 通知到期任务，高效管理定时任务
 
 - #### 底层使用 Epoll + LT 模式的 I/O 复用模型，并且结合非阻塞 I/O 实现主从 Reactor 模型
 
