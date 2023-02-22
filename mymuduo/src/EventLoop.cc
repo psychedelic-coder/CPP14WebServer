@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <memory>
+#include <assert.h>
 
 namespace mymuduo
 {
@@ -37,12 +38,16 @@ namespace mymuduo
         if (evtfd < 0)
         {
             LOG_FMT_FATAL("eventfd err!:%d \n", errno);
+            ::abort();
         }
         return evtfd;
     }
 
     EventLoop::EventLoop()
-        : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(CurrentThread::tid()), poller_(Poller::newDefaultPoller(this)), wakeupFd_(createEventfd()), wakeupChannel_(new Channel(this, wakeupFd_))
+        : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(CurrentThread::tid())
+          , poller_(Poller::newDefaultPoller(this))
+          //,poller_(new EpollPoller(this))
+          , wakeupFd_(createEventfd()), wakeupChannel_(new Channel(this, wakeupFd_)), currentActiveChannel_(nullptr)
     {
         LOG_FMT_DEBUG("EventLoop created %p in thread %d \n", this, threadId_);
         if (t_loopInThisThread)
@@ -58,6 +63,7 @@ namespace mymuduo
         wakeupChannel_->setReadCallback(std::bind(&EventLoop::handleRead, this));
         // 每一个eventloop都将监听wakeupchannel的EPOLLIN读事件了
         wakeupChannel_->enableReading();
+        LOG_INFO << "created a new eventloop";
     }
 
     EventLoop::~EventLoop()
@@ -77,6 +83,7 @@ namespace mymuduo
         while (!quit_)
         {
             activeChannels_.clear();
+            LOG_INFO << activeChannels_.size();
             // 监听两类fd   一种是client的fd 一种是wakeup的fd
             pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_);
             for (Channel *channel : activeChannels_)
@@ -168,6 +175,8 @@ namespace mymuduo
 
     void EventLoop::updateChannel(Channel *channel)
     {
+        assert(channel->ownerLoop() == this);
+        assertInLoopThread();
         poller_->updateChannel(channel);
     }
 

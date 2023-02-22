@@ -73,11 +73,17 @@ namespace mymuduo
         int index() { return index_; }
         void set_index(int idx) { index_ = idx; }
 
+        // for debug
+        std::string reventsToString() const;
+        std::string eventsToString() const;
+
         // one loop per thread
         EventLoop *ownerLoop() { return loop_; }
         void remove();
 
     private:
+        static std::string eventsToString(int fd, int ev);
+
         void update();
         void handleEventWithGuard(Timestamp receivetime);
 
@@ -93,6 +99,7 @@ namespace mymuduo
 
         std::weak_ptr<void> tie_;
         bool tied_;
+        bool addedToLoop_;
 
         // 因为channel能够获取poller fd最终发生的事件revents,所以它负责调用具体事件的回调操作
         ReadEventCallback readCallback_;

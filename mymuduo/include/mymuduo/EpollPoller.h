@@ -32,6 +32,7 @@ namespace mymuduo
         static const int kInitEventListSize = 16;
         using EventList = std::vector<epoll_event>;
 
+        static const char* operationToString(int op);
         void fillActiveChannels(int numEvents, ChannelList *activeChannels) const;
         // 相当于调用epoll_ctl()
         void update(int operation, Channel *channel);

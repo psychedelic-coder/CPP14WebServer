@@ -10,7 +10,7 @@
 
 #project(mymuduo)
 file(GLOB_RECURSE srcs CONFIGURE_DEPENDS src/*.cc include/*.h)
-add_library(mymuduo STATIC ${srcs})
+add_library(mymuduo SHARED ${srcs})
 target_include_directories(mymuduo PUBLIC include)
 # mymuduo最终编译成so动态库，设置动态库的路径,放在根目录的lib文件夹下
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

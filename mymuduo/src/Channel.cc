@@ -3,6 +3,9 @@
 #include "mymuduo/Logger.h"
 
 #include <sys/epoll.h>
+#include <assert.h>
+#include <sstream>
+#include <poll.h>
 
 namespace mymuduo
 {
@@ -11,7 +14,10 @@ namespace mymuduo
     const int Channel::kWriteEvent = EPOLLOUT;
 
     Channel::Channel(EventLoop *loop, int fd)
-        : loop_(loop), fd_(fd), events_(0), revents_(0), index_(-1), tied_(false) {}
+        : loop_(loop), fd_(fd), events_(0), revents_(0), index_(-1), tied_(false), addedToLoop_(false)
+    {
+        LOG_INFO << "channel has been created";
+    }
     Channel::~Channel() {}
 
     void Channel::handleEvent(Timestamp receieveTime)
@@ -40,6 +46,8 @@ namespace mymuduo
     void Channel::remove()
     {
         // [TODO] add code...
+        assert(isNoneEvent());
+        addedToLoop_ = false;
         loop_->removeChannel(this);
     }
 
@@ -49,6 +57,7 @@ namespace mymuduo
     {
         // 通过channel所属的EventLoop，调用poller的相应方法，注册fd的events事件
         // [TODO] add code...
+        addedToLoop_ = true;
         loop_->updateChannel(this);
     }
 
@@ -80,4 +89,35 @@ namespace mymuduo
         }
     }
 
+    std::string Channel::reventsToString() const
+    {
+        return eventsToString(fd_, revents_);
+    }
+
+    std::string Channel::eventsToString() const
+    {
+        return eventsToString(fd_, revents_);
+    }
+
+    std::string Channel::eventsToString(int fd, int ev)
+    {
+        std::ostringstream oss;
+        oss << fd << ": ";
+        if (ev & EPOLLIN)
+            oss << "IN ";
+        if (ev & EPOLLPRI)
+            oss << "PRI ";
+        if (ev & EPOLLOUT)
+            oss << "OUT ";
+        if (ev & EPOLLHUP)
+            oss << "HUP ";
+        if (ev & EPOLLRDHUP)
+            oss << "RDHUP ";
+        if (ev & EPOLLERR)
+            oss << "ERR ";
+        if (ev & POLLNVAL)
+            oss << "NVAL ";
+
+        return oss.str();
+    }
 } // namespace mymuduo

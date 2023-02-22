@@ -47,4 +47,64 @@ namespace http
         }
         return succeed;
     }
+
+    bool HttpContext::parseRequest(mymuduo::Buffer *buf, mymuduo::Timestamp receiveTime)
+    {
+        bool ok = true;
+        bool hasMore = true;
+        while (hasMore)
+        {
+            if (state_ == kExpectRequestLine)
+            {
+                const char *crlf = buf->findCRLF();
+                if (crlf)
+                {
+                    ok = processRequestLine(buf->peek(), crlf);
+                    if (ok)
+                    {
+                        request_.setReceiveTime(receiveTime);
+                        buf->retrieveUntil(crlf + 2);
+                        state_ = kExpectHeaders;
+                    }
+                    else
+                    {
+                        hasMore = false;
+                    }
+                }
+                else
+                {
+                    hasMore = false;
+                }
+            }
+            else if (state_ == kExpectHeaders)
+            {
+                const char *crlf = buf->findCRLF();
+                if (crlf)
+                {
+                    const char *colon = std::find(buf->peek(), crlf, ':');
+                    if (colon != crlf)
+                    {
+                        request_.addHeader(buf->peek(), colon, crlf);
+                    }
+                    else
+                    {
+                        // empty line, end of header
+                        // FIXME:
+                        state_ = kGotAll;
+                        hasMore = false;
+                    }
+                    buf->retrieveUntil(crlf + 2);
+                }
+                else
+                {
+                    hasMore = false;
+                }
+            }
+            else if (state_ == kExpectBody)
+            {
+                // FIXME:
+            }
+        }
+        return ok;
+    }
 } // namespace http

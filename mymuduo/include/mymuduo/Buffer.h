@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <assert.h>
 
 namespace mymuduo
 {
@@ -28,6 +29,13 @@ namespace mymuduo
             return begin() + readerIndex_;
         }
 
+        const char *findCRLF() const
+        {
+            // FIXME: replace with memmem()?
+            const char *crlf = std::search(peek(), beginWrite(), kCRLF, kCRLF + 2);
+            return crlf == beginWrite() ? NULL : crlf;
+        }
+
         // onMessage string <- Buffer
         void retrieve(size_t len)
         {
@@ -39,6 +47,13 @@ namespace mymuduo
             {
                 retrieveAll();
             }
+        }
+
+        void retrieveUntil(const char *end)
+        {
+            assert(peek() <= end);
+            assert(end <= beginWrite());
+            retrieve(end - peek());
         }
 
         void retrieveAll()
@@ -129,6 +144,8 @@ namespace mymuduo
         std::vector<char> buffer_;
         size_t readerIndex_;
         size_t writerIndex_;
+
+        static const char kCRLF[];
     };
 
 } // namespace mymuduo

@@ -6,6 +6,7 @@
 
 namespace mymuduo
 {
+    const char Buffer::kCRLF[] = "\r\n";
     // 从fd上读取数据， Poller工作在LT模式
     // 缓冲区有大小，但是从fd上读数据的时候却不知道Tcp数据最终的大小
     ssize_t Buffer::readFd(int fd, int *saveErrno)

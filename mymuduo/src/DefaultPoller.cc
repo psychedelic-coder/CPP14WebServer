@@ -1,5 +1,6 @@
 #include "mymuduo/Poller.h"
 #include "mymuduo/EpollPoller.h"
+#include <mymuduo/Logger.h>
 
 #include <stdlib.h>
 
@@ -13,7 +14,9 @@ namespace mymuduo
         }
         else
         {
-            return new EpollPoller(loop); // 生成epoll的实例
+            Poller *ret = new EpollPoller(loop);
+            LOG_INFO << "new EpollPoller";
+            return ret; // 生成epoll的实例
         }
     }
 

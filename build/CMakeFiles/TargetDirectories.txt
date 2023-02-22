@@ -3,6 +3,9 @@
 /home/liuchen/项目/Muduo_WebServer/build/http/CMakeFiles/httpServer.dir
 /home/liuchen/项目/Muduo_WebServer/build/http/CMakeFiles/edit_cache.dir
 /home/liuchen/项目/Muduo_WebServer/build/http/CMakeFiles/rebuild_cache.dir
+/home/liuchen/项目/Muduo_WebServer/build/http/test/CMakeFiles/testhttp.dir
+/home/liuchen/项目/Muduo_WebServer/build/http/test/CMakeFiles/edit_cache.dir
+/home/liuchen/项目/Muduo_WebServer/build/http/test/CMakeFiles/rebuild_cache.dir
 /home/liuchen/项目/Muduo_WebServer/build/mymuduo/CMakeFiles/mymuduo.dir
 /home/liuchen/项目/Muduo_WebServer/build/mymuduo/CMakeFiles/edit_cache.dir
 /home/liuchen/项目/Muduo_WebServer/build/mymuduo/CMakeFiles/rebuild_cache.dir

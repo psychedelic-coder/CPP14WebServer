@@ -1,11 +1,11 @@
 Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-1XcMzs
+Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-1CxdAS
 
-Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_3211f && [1/2] Building CXX object CMakeFiles/cmTC_3211f.dir/src.cxx.o
-[2/2] Linking CXX executable cmTC_3211f
-FAILED: cmTC_3211f 
-: && /usr/bin/clang++   CMakeFiles/cmTC_3211f.dir/src.cxx.o -o cmTC_3211f   && :
-/usr/bin/ld: CMakeFiles/cmTC_3211f.dir/src.cxx.o: in function `main':
+Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_f2ec5 && [1/2] Building CXX object CMakeFiles/cmTC_f2ec5.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_f2ec5
+FAILED: cmTC_f2ec5 
+: && /usr/bin/clang++   CMakeFiles/cmTC_f2ec5.dir/src.cxx.o -o cmTC_f2ec5   && :
+/usr/bin/ld: CMakeFiles/cmTC_f2ec5.dir/src.cxx.o: in function `main':
 src.cxx:(.text+0x25): undefined reference to `pthread_create'
 /usr/bin/ld: src.cxx:(.text+0x31): undefined reference to `pthread_detach'
 /usr/bin/ld: src.cxx:(.text+0x3d): undefined reference to `pthread_cancel'
@@ -37,12 +37,12 @@ int main(void)
 
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-elZotr
+Change Dir: /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/CMakeScratch/TryCompile-H9oRHU
 
-Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_da91a && [1/2] Building CXX object CMakeFiles/cmTC_da91a.dir/CheckFunctionExists.cxx.o
-[2/2] Linking CXX executable cmTC_da91a
-FAILED: cmTC_da91a 
-: && /usr/bin/clang++ -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_da91a.dir/CheckFunctionExists.cxx.o -o cmTC_da91a  -lpthreads && :
+Run Build Command(s):/home/liuchen/.local/bin/ninja cmTC_c84a1 && [1/2] Building CXX object CMakeFiles/cmTC_c84a1.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_c84a1
+FAILED: cmTC_c84a1 
+: && /usr/bin/clang++ -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_c84a1.dir/CheckFunctionExists.cxx.o -o cmTC_c84a1  -lpthreads && :
 /usr/bin/ld: 找不到 -lpthreads
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 ninja: build stopped: subcommand failed.

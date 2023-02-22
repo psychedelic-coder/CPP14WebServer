@@ -9,6 +9,8 @@ namespace mymuduo
         const char digits[] = "9876543210123456789";
         const char *zero = digits + 9;
 
+        const char digitsHex[] = "0123456789ABCDEF";
+
         // From muduo
         template <typename T>
         size_t convert(char buf[], T value)
@@ -35,6 +37,24 @@ namespace mymuduo
 
         template class FixedBuffer<kSmallBuffer>;
         template class FixedBuffer<kLargeBuffer>;
+
+        size_t convertHex(char buf[], uintptr_t value)
+        {
+            uintptr_t i = value;
+            char *p = buf;
+
+            do
+            {
+                int lsd = static_cast<int>(i % 16);
+                i /= 16;
+                *p++ = digitsHex[lsd];
+            } while (i != 0);
+
+            *p = '\0';
+            std::reverse(buf, p);
+
+            return p - buf;
+        }
     } // namespace detail
 
     template <typename T>
@@ -93,6 +113,20 @@ namespace mymuduo
     LogStream &LogStream::operator<<(unsigned long long v)
     {
         formatInteger(v);
+        return *this;
+    }
+
+    LogStream &LogStream::operator<<(const void *p)
+    {
+        uintptr_t v = reinterpret_cast<uintptr_t>(p);
+        if (buffer_.avail() >= kMaxNumericSize)
+        {
+            char *buf = buffer_.current();
+            buf[0] = '0';
+            buf[1] = 'x';
+            size_t len = detail::convertHex(buf + 2, v);
+            buffer_.add(len + 2);
+        }
         return *this;
     }
 

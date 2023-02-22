@@ -49,22 +49,25 @@ namespace mymuduo
     // listenfd有事件发生了，就是有新用户连接了
     void Acceptor::handleRead()
     {
+        loop_->assertInLoopThread();
         InetAddress peerAddr;
         int connfd = acceptSocket_.accept(&peerAddr);
         if (connfd >= 0)
         {
             if (newConnectionCallback_)
             {
-                newConnectionCallback_(std::move(acceptSocket_).accept(&peerAddr), peerAddr); // 轮询找到subloop，唤醒，分发新客户端当前的Channel
+                //newConnectionCallback_(std::move(acceptSocket_).accept(&peerAddr), peerAddr); // 轮询找到subloop，唤醒，分发新客户端当前的Channel
+                newConnectionCallback_(connfd, peerAddr);
             }
             else
             {
                 ::close(connfd);
+                LOG_DEBUG << "newConnectionCallback_ is null";
             }
         }
         else
         {
-            LOG_FMT_ERROR("%s:%s:%d accept create err: %d \n", __FILE__, __FUNCTION__, __LINE__, errno);
+            LOG_FMT_FATAL("%s:%s:%d accept create err: %d \n", __FILE__, __FUNCTION__, __LINE__, errno);
             if (errno == EMFILE)
             {
                 LOG_FMT_ERROR("%s:%s:%d sockfd reach the limit \n", __FILE__, __FUNCTION__, __LINE__);

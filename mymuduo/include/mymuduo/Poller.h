@@ -2,14 +2,15 @@
 
 #include "mymuduo/noncopyable.h"
 #include "mymuduo/Timestamp.h"
+#include "mymuduo/EventLoop.h"
 
 #include <vector>
 #include <unordered_map>
 
 namespace mymuduo
 {
-    class Channel;
     class EventLoop;
+    class Channel;
     // muduo库中IO复用的封装！Poller是个抽象基类。
     class Poller : noncopyable
     {
@@ -28,6 +29,11 @@ namespace mymuduo
 
         // EvemtLoop可以通过该接口获取默认的IO复用的具体实现
         static Poller *newDefaultPoller(EventLoop *loop);
+
+        void assertInLoopThread() const
+        {
+            ownerLoop_->assertInLoopThread();
+        }
 
     protected:
         // map的key：sockfd, value: sockfd所属的channel

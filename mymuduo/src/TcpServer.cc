@@ -52,6 +52,7 @@ namespace mymuduo
     // 有一个新的客户端的连接，acceptor会执行这个回调操作
     void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     {
+        loop_->assertInLoopThread();
         // 轮询算法，选择一个subloop来管理channel
         EventLoop *ioLoop = threadPool_->getNextLoop();
         char buf[64] = {0};
@@ -66,7 +67,8 @@ namespace mymuduo
         socklen_t addrlen = sizeof local;
         if (::getsockname(sockfd, (sockaddr *)&local, &addrlen) < 0)
         {
-            LOG_FMT_ERROR("sockets::getLocalAddr");
+            //LOG_FMT_ERROR("sockets::getLocalAddr");
+            LOG_FATAL << "sockets::getLocalAddr, errno: " << errno;
         }
         InetAddress localAddr(local);
 

@@ -107,7 +107,7 @@ build http/CMakeFiles/httpServer.dir/src/HttpServer.cc.o: CXX_COMPILER__httpServ
 #############################################
 # Link the static library /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a
 
-build /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a: CXX_STATIC_LIBRARY_LINKER__httpServer_Debug http/CMakeFiles/httpServer.dir/src/HttpContext.cc.o http/CMakeFiles/httpServer.dir/src/HttpResponse.cc.o http/CMakeFiles/httpServer.dir/src/HttpServer.cc.o || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+build /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a: CXX_STATIC_LIBRARY_LINKER__httpServer_Debug http/CMakeFiles/httpServer.dir/src/HttpContext.cc.o http/CMakeFiles/httpServer.dir/src/HttpResponse.cc.o http/CMakeFiles/httpServer.dir/src/HttpServer.cc.o || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = http/CMakeFiles/httpServer.dir
   POST_BUILD = :
@@ -141,11 +141,73 @@ build http/rebuild_cache: phony http/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
+# /home/liuchen/项目/Muduo_WebServer/http/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target testhttp
+
+
+#############################################
+# Order-only phony target for testhttp
+
+build cmake_object_order_depends_target_testhttp: phony || cmake_object_order_depends_target_httpServer cmake_object_order_depends_target_mymuduo
+
+build http/test/CMakeFiles/testhttp.dir/HttpServer_test.cc.o: CXX_COMPILER__testhttp_Debug /home/liuchen/项目/Muduo_WebServer/http/test/HttpServer_test.cc || cmake_object_order_depends_target_testhttp
+  DEP_FILE = http/test/CMakeFiles/testhttp.dir/HttpServer_test.cc.o.d
+  FLAGS = -g -std=c++14
+  INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/http/include -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
+  OBJECT_DIR = http/test/CMakeFiles/testhttp.dir
+  OBJECT_FILE_DIR = http/test/CMakeFiles/testhttp.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target testhttp
+
+
+#############################################
+# Link the executable /home/liuchen/项目/Muduo_WebServer/bin/http/testhttp
+
+build /home/liuchen/项目/Muduo_WebServer/bin/http/testhttp: CXX_EXECUTABLE_LINKER__testhttp_Debug http/test/CMakeFiles/testhttp.dir/HttpServer_test.cc.o | /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so || /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
+  FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/home/liuchen/项目/Muduo_WebServer/lib  /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a  /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so  -lpthread
+  OBJECT_DIR = http/test/CMakeFiles/testhttp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = /home/liuchen/项目/Muduo_WebServer/bin/http/testhttp
+  TARGET_PDB = testhttp.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build http/test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/liuchen/项目/Muduo_WebServer/build/http/test && /usr/local/bin/ccmake -S/home/liuchen/项目/Muduo_WebServer -B/home/liuchen/项目/Muduo_WebServer/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build http/test/edit_cache: phony http/test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build http/test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/liuchen/项目/Muduo_WebServer/build/http/test && /usr/local/bin/cmake --regenerate-during-build -S/home/liuchen/项目/Muduo_WebServer -B/home/liuchen/项目/Muduo_WebServer/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build http/test/rebuild_cache: phony http/test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
 # /home/liuchen/项目/Muduo_WebServer/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target mymuduo
+# Object build statements for SHARED_LIBRARY target mymuduo
 
 
 #############################################
@@ -154,181 +216,207 @@ build http/rebuild_cache: phony http/CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_mymuduo: phony || mymuduo/CMakeFiles/mymuduo.dir
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Acceptor.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Acceptor.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Acceptor.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/AsyncLogging.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/AsyncLogging.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/AsyncLogging.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Buffer.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Buffer.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Buffer.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Channel.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Channel.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Channel.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/CurrentThread.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/CurrentThread.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/CurrentThread.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/DefaultPoller.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/DefaultPoller.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/DefaultPoller.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/EpollPoller.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EpollPoller.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/EpollPoller.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/EventLoop.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoop.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/EventLoop.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThread.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThread.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThread.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThreadPool.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/EventLoopThreadPool.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThreadPool.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/FileUtil.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/FileUtil.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/FileUtil.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/InetAddress.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/InetAddress.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/InetAddress.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/LogFile.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogFile.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/LogFile.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/LogStream.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/LogStream.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/LogStream.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Logger.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Logger.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Logger.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Poller.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Poller.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Poller.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Socket.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Socket.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Socket.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/TcpConnection.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpConnection.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/TcpConnection.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/TcpServer.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TcpServer.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/TcpServer.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Thread.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Thread.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Thread.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Timer.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timer.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Timer.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/TimerQueue.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/TimerQueue.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/TimerQueue.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 build mymuduo/CMakeFiles/mymuduo.dir/src/Timestamp.cc.o: CXX_COMPILER__mymuduo_Debug /home/liuchen/项目/Muduo_WebServer/mymuduo/src/Timestamp.cc || cmake_object_order_depends_target_mymuduo
+  DEFINES = -Dmymuduo_EXPORTS
   DEP_FILE = mymuduo/CMakeFiles/mymuduo.dir/src/Timestamp.cc.o.d
-  FLAGS = -g -std=c++14
+  FLAGS = -g -fPIC -std=c++14
   INCLUDES = -I/home/liuchen/项目/Muduo_WebServer/mymuduo/include
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   OBJECT_FILE_DIR = mymuduo/CMakeFiles/mymuduo.dir/src
 
 
 # =============================================================================
-# Link build statements for STATIC_LIBRARY target mymuduo
+# Link build statements for SHARED_LIBRARY target mymuduo
 
 
 #############################################
-# Link the static library /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+# Link the shared library /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
 
-build /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a: CXX_STATIC_LIBRARY_LINKER__mymuduo_Debug mymuduo/CMakeFiles/mymuduo.dir/src/Acceptor.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/AsyncLogging.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Buffer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Channel.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/CurrentThread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/DefaultPoller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EpollPoller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoop.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThreadPool.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/FileUtil.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/InetAddress.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/LogFile.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/LogStream.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Logger.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Poller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Socket.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TcpConnection.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TcpServer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Thread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Timer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TimerQueue.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Timestamp.cc.o
+build /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so: CXX_SHARED_LIBRARY_LINKER__mymuduo_Debug mymuduo/CMakeFiles/mymuduo.dir/src/Acceptor.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/AsyncLogging.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Buffer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Channel.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/CurrentThread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/DefaultPoller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EpollPoller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoop.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/EventLoopThreadPool.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/FileUtil.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/InetAddress.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/LogFile.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/LogStream.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Logger.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Poller.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Socket.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TcpConnection.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TcpServer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Thread.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Timer.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/TimerQueue.cc.o mymuduo/CMakeFiles/mymuduo.dir/src/Timestamp.cc.o
   LANGUAGE_COMPILE_FLAGS = -g
+  LINK_LIBRARIES = -lpthread
   OBJECT_DIR = mymuduo/CMakeFiles/mymuduo.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
-  TARGET_PDB = mymuduo.a.dbg
+  SONAME = libmymuduo.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
+  TARGET_PDB = mymuduo.so.dbg
 
 
 #############################################
@@ -383,9 +471,9 @@ build mymuduo/test/CMakeFiles/test01.dir/test01.cc.o: CXX_COMPILER__test01_Debug
 #############################################
 # Link the executable /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test01
 
-build /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test01: CXX_EXECUTABLE_LINKER__test01_Debug mymuduo/test/CMakeFiles/test01.dir/test01.cc.o | /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+build /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test01: CXX_EXECUTABLE_LINKER__test01_Debug mymuduo/test/CMakeFiles/test01.dir/test01.cc.o | /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
   FLAGS = -g
-  LINK_LIBRARIES = /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a  -lpthread
+  LINK_LIBRARIES = -Wl,-rpath,/home/liuchen/项目/Muduo_WebServer/lib  /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so  -lpthread
   OBJECT_DIR = mymuduo/test/CMakeFiles/test01.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -416,9 +504,9 @@ build mymuduo/test/CMakeFiles/test02.dir/muduo_server.cpp.o: CXX_COMPILER__test0
 #############################################
 # Link the executable /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test02
 
-build /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test02: CXX_EXECUTABLE_LINKER__test02_Debug mymuduo/test/CMakeFiles/test02.dir/muduo_server.cpp.o | /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+build /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test02: CXX_EXECUTABLE_LINKER__test02_Debug mymuduo/test/CMakeFiles/test02.dir/muduo_server.cpp.o | /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so || /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
   FLAGS = -g
-  LINK_LIBRARIES = /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a  -lpthread
+  LINK_LIBRARIES = -Wl,-rpath,/home/liuchen/项目/Muduo_WebServer/lib  /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so  -lpthread
   OBJECT_DIR = mymuduo/test/CMakeFiles/test02.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -456,13 +544,15 @@ build httpServer: phony /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a
 
 build libhttpServer.a: phony /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a
 
-build libmymuduo.a: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+build libmymuduo.so: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
 
-build mymuduo: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a
+build mymuduo: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so
 
 build test01: phony /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test01
 
 build test02: phony /home/liuchen/项目/Muduo_WebServer/bin/mymuduo/test02
+
+build testhttp: phony /home/liuchen/项目/Muduo_WebServer/bin/http/testhttp
 
 # =============================================================================
 # Folder targets.
@@ -479,14 +569,21 @@ build all: phony http/all mymuduo/all
 #############################################
 # Folder: /home/liuchen/项目/Muduo_WebServer/build/http
 
-build http/all: phony /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a
+build http/all: phony /home/liuchen/项目/Muduo_WebServer/lib/libhttpServer.a http/test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/liuchen/项目/Muduo_WebServer/build/http/test
+
+build http/test/all: phony /home/liuchen/项目/Muduo_WebServer/bin/http/testhttp
 
 # =============================================================================
 
 #############################################
 # Folder: /home/liuchen/项目/Muduo_WebServer/build/mymuduo
 
-build mymuduo/all: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.a mymuduo/test/all
+build mymuduo/all: phony /home/liuchen/项目/Muduo_WebServer/lib/libmymuduo.so mymuduo/test/all
 
 # =============================================================================
 
@@ -516,14 +613,14 @@ build /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/cmake.verify_globs: 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/cmake.verify_globs | /home/liuchen/项目/Muduo_WebServer/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/VerifyGlobs.cmake /home/liuchen/项目/Muduo_WebServer/http/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/test/CMakeLists.txt /usr/local/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.25/Modules/CheckLibraryExists.cmake /usr/local/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.25/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake /usr/local/share/cmake-3.25/Modules/FindPackageMessage.cmake /usr/local/share/cmake-3.25/Modules/FindThreads.cmake /usr/local/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.25/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.25.0-rc3/CMakeCXXCompiler.cmake CMakeFiles/3.25.0-rc3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/cmake.verify_globs | /home/liuchen/项目/Muduo_WebServer/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/VerifyGlobs.cmake /home/liuchen/项目/Muduo_WebServer/http/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/http/test/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/test/CMakeLists.txt /usr/local/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.25/Modules/CheckLibraryExists.cmake /usr/local/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.25/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake /usr/local/share/cmake-3.25/Modules/FindPackageMessage.cmake /usr/local/share/cmake-3.25/Modules/FindThreads.cmake /usr/local/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.25/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.25.0-rc3/CMakeCXXCompiler.cmake CMakeFiles/3.25.0-rc3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/liuchen/项目/Muduo_WebServer/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/VerifyGlobs.cmake /home/liuchen/项目/Muduo_WebServer/http/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/test/CMakeLists.txt /usr/local/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.25/Modules/CheckLibraryExists.cmake /usr/local/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.25/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake /usr/local/share/cmake-3.25/Modules/FindPackageMessage.cmake /usr/local/share/cmake-3.25/Modules/FindThreads.cmake /usr/local/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.25/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.25.0-rc3/CMakeCXXCompiler.cmake CMakeFiles/3.25.0-rc3/CMakeSystem.cmake: phony
+build /home/liuchen/项目/Muduo_WebServer/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/build/CMakeFiles/VerifyGlobs.cmake /home/liuchen/项目/Muduo_WebServer/http/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/http/test/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/CMakeLists.txt /home/liuchen/项目/Muduo_WebServer/mymuduo/test/CMakeLists.txt /usr/local/share/cmake-3.25/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.25/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.25/Modules/CheckLibraryExists.cmake /usr/local/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.25/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake /usr/local/share/cmake-3.25/Modules/FindPackageMessage.cmake /usr/local/share/cmake-3.25/Modules/FindThreads.cmake /usr/local/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.25/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.25/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.25.0-rc3/CMakeCXXCompiler.cmake CMakeFiles/3.25.0-rc3/CMakeSystem.cmake: phony
 
 
 #############################################

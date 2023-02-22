@@ -5,6 +5,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
+#include <assert.h>
 
 namespace mymuduo
 {
@@ -19,6 +20,7 @@ namespace mymuduo
         {
             LOG_FMT_FATAL("epoll_create error: %d", errno);
         }
+        LOG_INFO << "created a new epollpoller";
     }
 
     EpollPoller::~EpollPoller()
@@ -28,8 +30,8 @@ namespace mymuduo
 
     Timestamp EpollPoller::poll(int timeoutMs, ChannelList *activeChannels)
     {
-        // 实际上应该用LOG_FMT_DEBUG输出日志更为合理 
-        LOG_FMT_DEBUG("func=%s => fd total count:%lu\n", channels_.size());
+        // 实际上应该用LOG_FMT_DEBUG输出日志更为合理
+        LOG_FMT_DEBUG("func= %s => fd total count:%lu \n", channels_.size());
 
         int numEvents = ::epoll_wait(epollfd_, &(*events_.begin()), static_cast<int>(events_.size()), timeoutMs);
         int saveError = errno;
@@ -37,7 +39,8 @@ namespace mymuduo
 
         if (numEvents > 0)
         {
-            LOG_FMT_DEBUG("%d events happened \n", numEvents);
+            LOG_FMT_INFO("%d events happened", numEvents);
+            LOG_INFO << events_.size();
             fillActiveChannels(numEvents, activeChannels);
             if (numEvents == events_.size())
             {
@@ -71,6 +74,7 @@ namespace mymuduo
      */
     void EpollPoller::updateChannel(Channel *channel)
     {
+        Poller::assertInLoopThread();
         const int index = channel->index();
         LOG_FMT_INFO("func = %s => fd = %d events = %d index = %d \n", __FUNCTION__, channel->fd(), channel->events(), index);
 
@@ -79,15 +83,25 @@ namespace mymuduo
             int fd = channel->fd();
             if (index == kNew)
             {
+                assert(channels_.find(fd) == channels_.end());
                 channels_[fd] = channel;
             }
-
+            else // index = kDeleted
+            {
+                assert(channels_.find(fd) != channels_.end());
+                assert(channels_[fd] == channel);
+            }
             channel->set_index(kAdded);
             update(EPOLL_CTL_ADD, channel);
         }
         else
         {
+            // update existing one with EPOLL_CTL_MOD/DEL
             int fd = channel->fd();
+            (void)fd;
+            assert(channels_.find(fd) != channels_.end());
+            assert(channels_[fd] == channel);
+            assert(index == kAdded);
             if (channel->isNoneEvent())
             {
                 update(EPOLL_CTL_DEL, channel);
@@ -127,11 +141,26 @@ namespace mymuduo
 
     void EpollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels) const
     {
+        assert(static_cast<size_t>(numEvents) <= events_.size());
         for (int i = 0; i < numEvents; ++i)
         {
+            /*LOG_INFO << events_[i].data.ptr;
             Channel *channel = static_cast<Channel *>(events_[i].data.ptr);
+            // if(hasChannel(channel))
+            //     LOG_INFO << "EpollPoller has channel*";
+            LOG_INFO << "Channel ptr found";
+            LOG_INFO << "events_[i].data.fd = " << events_[i].data.fd;
             channel->set_revents(events_[i].events);
             activeChannels->push_back(channel);
+            */
+            auto iter = channels_.find(events_[i].data.fd);
+            if (iter != channels_.end())
+            {
+                LOG_INFO << "Truely found channel*";
+                Channel *channel = iter->second;
+                channel->set_revents(events_[i].events);
+                activeChannels->push_back(channel);
+            }
         }
     }
 
@@ -144,12 +173,14 @@ namespace mymuduo
     void EpollPoller::update(int operation, Channel *channel)
     {
         epoll_event event;
-        memset(&event, 0, sizeof event);
+        // ::memset(&event, 0, sizeof event);
+        ::bzero(&event, sizeof event);
         int fd = channel->fd();
         event.events = channel->events();
         event.data.ptr = channel;
         event.data.fd = fd;
-
+        LOG_INFO << "epoll_ctl op = " << operationToString(operation)
+                 << " fd = " << fd << " event = { " << channel->eventsToString() << " }";
         if (::epoll_ctl(epollfd_, operation, fd, &event) < 0)
         {
             if (operation == EPOLL_CTL_DEL)
@@ -163,4 +194,19 @@ namespace mymuduo
         }
     }
 
+    const char *EpollPoller::operationToString(int op)
+    {
+        switch (op)
+        {
+        case EPOLL_CTL_ADD:
+            return "ADD";
+        case EPOLL_CTL_DEL:
+            return "DEL";
+        case EPOLL_CTL_MOD:
+            return "MOD";
+        default:
+            assert(false && "ERROR op");
+            return "Unknown Operation";
+        }
+    }
 } // namespace mymuduo
